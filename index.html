@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clinica - Estefany Duran</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.0/normalize.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/styles.css">
+
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+</head>
+
+<body onload="userValidate();">
+
+    <div id="alert" class="alert">
+        <div class="alert-title">
+            <h4 class="text-center">Enviando...<br></h4>
+        </div>
+    </div>
+
+    <section class="register">
+        <section id="userForm" class="register__container">
+            <h2 class="text-center">Registrar Paciente</h2>
+            <form id="form1" class="register__container--form">
+                <div class="input-group">
+                    <input class="input" type="text" id="name" onchange="userValidate()" onkeyup="userValidate()"
+                        placeholder="Nombre">
+                    <input class="input vertical" type="text" id="lastname" onchange="userValidate()"
+                        onkeyup="userValidate()" placeholder="Apellido">
+                </div>
+                <input class="input" type="email" id="email" onchange="userValidate()" onchange="userValidate()"
+                    onkeyup="userValidate()" placeholder="Correo Electronico">
+                <input class="input" type="text" id="dni" onchange="userValidate()" onkeyup="userValidate()"
+                    placeholder="Cédula">
+                <input class="input" type="text" id="address" onchange="userValidate()" onkeyup="userValidate()"
+                    placeholder="Dirección">
+
+                <h4 class="text-center">Examenes Realizados</h4>
+
+                <div class="check-group">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="bloodTestBox" value="trigliceridos">
+                        <label class="form-check-label">Examen de Sangre</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="hematologiaBox" value="hematologia">
+                        <label class="form-check-label">Hematología</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="urineBox" value="urine">
+                        <label class="form-check-label">Examen de Orina</label>
+                    </div>
+                </div>
+
+                <button class="button" id="nextInput" onclick="nextStep(event);">Siguiente</button>
+            </form>
+        </section>
+
+        <section id="clinicForm" class="register__container">
+            <form id="form2" class="register__container--form">
+                <h2 class="text-center">Resultados del Paciente</h2>
+                <div id="blood-input-group" class="hide-input-group">
+                    <h4 class="text-center">Examen de Sangre</h4>
+                    <div class="input-group">
+                        <input class="input" type="text" id="globulos_rojos" placeholder="Globulos Rojos">
+                        <input class="input vertical" type="text" id="globulos_blancos" placeholder="Globulos Blancos">
+                    </div>
+                </div>
+                <div id="hematologia-input-group" class="hide-input-group">
+                    <h4 class="text-center">Hematología</h4>
+                    <div class="input-group">
+                        <input class="input" type="text" id="trigliceridos" placeholder="Trigliceridos">
+                        <input class="input vertical" type="text" id="hemoglobina" placeholder="Hemoglobina">
+                    </div>
+
+                    <div class="input-group">
+                        <input class="input" type="text" id="creatinina" placeholder="Creatinina">
+                        <input class="input vertical" type="text" id="colesterol" placeholder="Colesterol">
+                    </div>
+
+                </div>
+                <div id="orina-input-group" class="hide-input-group">
+
+                    <h4 class="text-center">Orina</h4>
+
+                    <div class="input-group">
+                        <input class="input" type="text" id="acidez" placeholder="Acidez">
+                        <input class="input vertical" type="text" id="concentracion" placeholder="Concentración">
+                    </div>
+                </div>
+                <button class="button" id="registerBtn" onclick="register(event);">Registrar Paciente</button>
+                <button class="button" onclick="backStep(event);">Volver</button>
+            </form>
+        </section>
+    </section>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="./controller/indexController.js"></script>
+
+</body>
+
+</html>
+
+</html>
